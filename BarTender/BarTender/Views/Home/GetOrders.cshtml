@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DrinkOrder>
+<h1 class="text-center m-2 p-2 border-bottom">View Orders</h1>
+
+@if(Model.Count() == 0)
+    {
+        <h3 class="text-center m-2 p-2 border-bottom">There are currently no orders to be made, get out there and make some people happy</h3>
+    }
+
+@foreach (var order in Model)
+{
+    @if (order.Active == true)
+    {
+        <div class="border m-2 p-2">
+            <form asp-action="RemoveDrink" method="post">
+                <label>Drink Name : @order.OrderedDrink.DrinkName</label>
+                <p><label>Price : @order.TotalPrice</label></p>
+                <p><label>Customizations : </label></p>
+                <input hidden value=@order.DrinkOrderId name="Id" />
+                <partial name="CustomizationsPartial" model=order.Customization />
+                <button type="submit" class="btn btn-outline-dark">Drink Sold</button>
+            </form>
+        </div>
+
+    }
+}

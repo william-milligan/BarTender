@@ -1,0 +1,32 @@
+﻿@model Customization
+<ul>
+@if (Model.FrostyMug == true)
+{
+    <li class="m-2">In a frosty mug</li>
+}
+@if (Model.HasJuice == true)
+{
+    <li class="m-2">Added Juice</li>
+
+}
+@if (Model.IsDouble == true)
+{
+    <li class="m-2">Double</li>
+
+}
+@if (Model.LittleUmbrella == true)
+{
+    <li class="m-2">Umbrella Added</li>
+
+}
+@if (Model.SaltyRim == true)
+{
+    <li class="m-2">Salt on Rim</li>
+
+}
+@if (Model.Vegan == true)
+{
+    <li class="m-2">Vegan</li>
+
+}
+</ul>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Drink>
+
+<h1 class="text-center m-2 p-2 border-bottom">This is my menu! Please Pick You're Poison</h1>
+
+
+@foreach (var drink in Model)
+{
+    <div class="border m-5 p-5">
+        <form asp-action="AddIngredients" method="post">
+            <input hidden value=@drink.DrinkId name="DrinkId" />
+            <h3 class="m-2 p-2">@drink.DrinkName</h3>
+            <p class="m-2 p-2">@drink.Description</p>
+            <p class="m-2 p-2">@drink.Price</p>
+            <button class="btn  btn-lg btn-outline-danger" type="submit" > Order Up</button>
+        </form>
+    </div>
+
+
+}

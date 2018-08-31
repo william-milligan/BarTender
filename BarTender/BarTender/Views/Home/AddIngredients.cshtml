@@ -1,0 +1,29 @@
+﻿@model AddIngredientViewModel
+
+
+<h1  class="text-center m-2 p-2 border-bottom">Select Ingredients To Add</h1>
+
+<div class="m-5 p-5 border">
+    <form asp-action="MakeOrder" method="post">
+        <input hidden asp-for=@Model.drinkId />
+        <label class="m-2">Type of Drink : @Model.drinkOrder.DrinkName</label>
+
+        <p><label class="m-2">Base Drink Price : @Model.drinkOrder.Price</label></p>
+        <div class="m-2 p-2">
+            <input type="checkbox" asp-for=@Model.custom.IsDouble /><label class="m-2">Make Double</label>
+        </div>
+        <div class="m-2 p-2">
+            <input type="checkbox" asp-for=@Model.custom.Vegan /><label class="m-2">Add Juice?</label>
+        </div>
+        <div class="m-2 p-2">
+            <input type="checkbox" asp-for=@Model.custom.SaltyRim /><label class="m-2">Add Salt?</label>
+        </div>
+        <div class="m-2 p-2">
+            <input type="checkbox" asp-for=@Model.custom.LittleUmbrella /><label class="m-2">Add Umbrella?</label>
+        </div>
+        <div class="m-2 p-2">
+            <input type="checkbox" asp-for=@Model.custom.FrostyMug /><label class="m-2">In Frosty Mug?</label>
+        </div>
+            <button class="btn btn-outline-success" type="submit">Add Customizations</button>
+    </form>
+</div>
